@@ -1,0 +1,6 @@
+[Unit]
+Description=Set performance profile when AC is plugged in
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powerprofilesctl set performance

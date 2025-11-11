@@ -1,0 +1,44 @@
+@theme "~/.config/rofi/config.rasi"
+
+configuration {
+    show-icons: true;
+    font: "Monaco Nerd Font 9";
+}
+
+window {
+    width: 80%;
+    height: 45%;                 /* slightly shorter overall */
+}
+
+listview {
+    columns: 6;                  /* more images per row */
+    lines: 4;                    /* more rows visible */
+    spacing: 8px;                /* less empty space between entries */
+    dynamic: true;
+    cycle: false;
+}
+
+element {
+    orientation: vertical;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: transparent;
+    spacing: 3px;                /* less gap between icon and label */
+}
+
+element selected {
+    background-color: var(active-background);
+    text-color: var(background);
+}
+
+element-icon {
+    size: 80px;                  /* slightly smaller to fit more per grid */
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element-text {
+    font: "Monaco Nerd Font 7";
+    text-color: #ffffff;
+    horizontal-align: 0.5;
+}

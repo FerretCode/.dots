@@ -1,0 +1,8 @@
+{
+    "buttons": {
+        "edit": {
+            "text": "Edit",
+            "on-click": "/home/fc/.config/swaync/handle_click.sh"
+        }
+    }
+}

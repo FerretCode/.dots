@@ -1,0 +1,15 @@
+[pyprland]
+plugins = ["scratchpads", "toggle_special"]
+
+[scratchpads.terminal]
+command = "kitty --class kitty-scratchpad"
+
+animation = "fromRight"
+
+unfocus = "hide"
+
+size = "40% 90%"
+
+position = "59% 5%"
+
+margin = 10

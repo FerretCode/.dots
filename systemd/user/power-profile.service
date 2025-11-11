@@ -1,0 +1,6 @@
+[Unit]
+Description=Automatically set power profile based on AC power
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powerprofilesctl set %i

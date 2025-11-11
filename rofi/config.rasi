@@ -1,0 +1,82 @@
+/**
+ * Minimal pywal-based Rofi theme
+ */
+
+configuration {
+    modi:           "drun";
+    show-icons:     true;
+    icon-theme:     "Papirus";
+    font:           "Monaco Nerd Font 10";
+    display-drun:   "";
+}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+/* Main window */
+window {
+    background-color: var(background);
+    text-color:       var(foreground);
+    border:           0px;
+    width:            40%;
+    location:         center;
+    anchor:           center;
+}
+
+/* Layout */
+mainbox {
+    children: [ "inputbar", "listview" ];
+    spacing:  5px;
+    padding:  10px;
+}
+
+/* Input bar */
+inputbar {
+    background-color: var(background);
+    text-color:       var(foreground);
+    children:         [ "prompt", "entry" ];
+    spacing:          8px;
+    padding:          4px 8px;
+    border:           1px;
+    border-color:     var(active-background);
+    border-radius:    3px;
+}
+
+prompt {
+    text-color: var(active-foreground);
+}
+
+entry {
+    placeholder:        "Search...";
+    placeholder-color:  var(active-foreground);
+}
+
+/* List view */
+listview {
+    background-color: var(background);
+    lines:            8;
+    spacing:          2px;
+    scrollbar:        false;
+}
+
+/* Elements */
+element {
+    background-color: transparent;
+    text-color:       var(foreground);
+    padding:          4px 6px;
+    border-radius:    3px;
+}
+
+element selected {
+    background-color: var(active-background);
+    text-color:       var(background);
+}
+
+/* Icons */
+element-icon {
+    size: 16px;
+    margin: 0px 6px 0px 0px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
