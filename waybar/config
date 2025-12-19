@@ -1,138 +1,96 @@
 // -*- mode: json -*-
-
 {
 	"layer": "top",
 	"position": "top",
-
 	"modules-left": [
-		"hyprland/workspaces",
-		"custom/right-arrow-dark"
+		"hyprland/workspaces"
 	],
 	"modules-center": [
-		"custom/left-arrow-dark",
-		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"clock#3",
-		"custom/right-arrow-dark"
+		"clock"
 	],
 	"modules-right": [
-        "custom/left-arrow-dark",
-        "custom/suspend",
-		"custom/left-arrow-light",
-        "custom/left-arrow-dark",
-        "custom/lock",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-        "power-profiles-daemon",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
+		"power-profiles-daemon",
+        "custom/separator",
 		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
+        "custom/separator",
 		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
+        "custom/separator",
+		"custom/lock",
+        "custom/separator",
+		"custom/suspend",
+        "custom/separator",
 		"tray"
 	],
-
-    "custom/suspend": {
-        "format": "󰒲",
-        "tooltip": "Suspend",
-        "on-click": "systemctl suspend"
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false
     },
-
-    "custom/lock": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "hyprlock"
-    },
-
-	"custom/left-arrow-dark": {
-		"format": "",
-		"tooltip": false
+	"custom/suspend": {
+		"format": "󰒲",
+		"tooltip": "Suspend",
+		"on-click": "systemctl suspend"
 	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
+	"custom/lock": {
+		"format": "",
+		"tooltip": "Lock screen",
+		"on-click": "hyprlock"
 	},
-	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"format": "{icon}",
-        "format-icons": {
-            "default": "◼",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "active": "◼"
-        },
+		"format-icons": {
+			"default": "",
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"active": ""
+		}
 	},
-
-	"clock#1": {
-		"format": "{:%a}",
-		"tooltip": false
+	"clock": {
+		"format": "{:%a  %H:%M  %m-%d}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		}
 	},
-	"clock#2": {
-		"format": "{:%H:%M}",
-		"tooltip": false
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "󰗑",
+			"performance": "",
+			"balanced": "󰗑",
+			"power-saver": "󰌪"
+		}
 	},
-	"clock#3": {
-		"format": "{:%m-%d}",
-		"tooltip": false
-	},
-
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
-        "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
-        }
-    },
-
 	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE",
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": " 0%",
 		"format-icons": {
 			"headphones": "",
-			"default": [
-				"",
-				""
-			]
+			"default": ["", "󰖀", ""]
 		},
 		"scroll-step": 5,
 		"on-click": "pamixer -t",
 		"on-click-right": "pavucontrol"
-	},
-	"memory": {
-		"interval": 5,
-		"format": "Mem {}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "CPU {usage:2}%"
 	},
 	"battery": {
 		"states": {
@@ -141,20 +99,12 @@
 			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	"disk": {
-		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
-		"path": "/"
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
 	},
 	"tray": {
-		"icon-size": 20
+		"icon-size": 18,
+		"spacing": 10
 	}
 }

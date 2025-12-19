@@ -46,6 +46,11 @@ xdg-desktop-portal/
 xfce4/
 yabridgectl/
 yay/
+glow/
+helm/
+k9s/
+simple-update-notifier/
+vesktop/
 EOS-greeter.conf
 QtProject.conf
 baloofilerc
@@ -65,3 +70,13 @@ mimeapps.list
 pavucontrol.ini
 systemmonitorrc
 trashrc
+ardour8/
+tailscale/
+waybar.bak/
+ChowdhuryDSP/
+WebCord/
+falkTX/
+glib-2.0/
+google-chrome-for-testing/
+gtk-2.0/
+kwriterc

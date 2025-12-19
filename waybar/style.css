@@ -1,103 +1,95 @@
+@import "/home/fc/.cache/wal/colors-waybar.css";
+
 * {
-    font-size: 20px;
-    font-family: monospace;
+    font-size: 16px;
+    font-family: "Terminus (TTF)";
+    font-weight: bold;
 }
 
 window#waybar {
-    background: #292b2e;
-    color: #fdf6e3;
+    background: @background;
+    color: @foreground;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-    color: #1a1a1a;
-}
-
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-    color: #292b2e;
-    background: #1a1a1a;
-}
-
-#power-profiles-daemon {
-    background-color: #1a1a1a;
-    color: #268bd2;
-    padding: 0 20px 0 10px;
-    margin: 0;
-}
-
-#custom-lock {
-    background-color: #1a1a1a;
-    color: #268bd2;
-    padding: 0 20px 0 10px;
-    margin: 0;
-}
-
-#custom-suspend {
-    background-color: #1a1a1a;
-    color: #268bd2;
-    padding: 0 20px 0 10px;
-    margin: 0;
-}
-
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk,
-#tray {
-    background: #1a1a1a;
+/* Workspaces */
+#workspaces {
+    margin: 0 0px;
 }
 
 #workspaces button {
-    padding: 0 2px;
-    color: #fdf6e3;
+    padding: 0 8px;
+    color: @color8;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 }
 
-#workspaces button.focused {
-    color: #268bd2;
+#workspaces button.active {
+    color: @color5;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
+    background: @color0;
+    color: @color7;
 }
 
-#workspaces button:hover {
-    background: #1a1a1a;
-    border: #1a1a1a;
-    padding: 0 3px;
+/* Clock */
+#clock {
+    color: @foreground;
+    padding: 0 15px;
+}
+
+/* Right side modules */
+#power-profiles-daemon,
+#pulseaudio,
+#battery,
+#custom-lock,
+#custom-suspend {
+    padding: 0 12px;
+    margin: 0 2px;
+}
+
+#tray {
+    margin-right: 0px;
+}
+
+#power-profiles-daemon {
+    padding: 0 12px;
+    color: @color3;
 }
 
 #pulseaudio {
-    color: #268bd2;
-}
-
-#memory {
-    color: #2aa198;
-}
-
-#cpu {
-    color: #6c71c4;
+    color: @color4;
 }
 
 #battery {
-    color: #859900;
+    color: @color2;
 }
 
-#disk {
-    color: #b58900;
+#battery.warning {
+    color: @color1;
 }
 
-#clock,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk {
-    padding: 0 10px;
+#battery.critical {
+    color: @color9;
+}
+
+#custom-lock {
+    color: @color5;
+}
+
+#custom-suspend {
+    color: @color6;
+    margin-right: 8px;
+}
+
+/* Tooltips */
+tooltip {
+    background: @color0;
+    border: 1px solid @color4;
+    border-radius: 5px;
+}
+
+tooltip label {
+    color: @foreground;
 }
