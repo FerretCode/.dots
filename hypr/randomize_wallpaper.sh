@@ -17,6 +17,7 @@ hyprctl hyprpaper preload "$WALLPAPER"
 hyprctl hyprpaper wallpaper ",$WALLPAPER"
 
 wal -i "$WALLPAPER" -n 
+ matugen image "$WALLPAPER"
 
 WAL_COLORS="$HOME/.cache/wal/colors.json"
 
